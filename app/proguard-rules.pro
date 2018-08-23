@@ -72,6 +72,6 @@
 -keep class com.alibaba.fastjson.**{*;}
 
 # ARouter
--keep public class com.alibaba.android.arouter.routes.**{*;}
--keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
--keep interface * implements com.alibaba.android.arouter.facade.template.IProvider
+-keep public class com.lexinfintech.android.arouter.routes.**{*;}
+-keep class * implements com.lexinfintech.android.arouter.facade.template.ISyringe{*;}
+-keep interface * implements com.lexinfintech.android.arouter.facade.template.IProvider

@@ -99,19 +99,19 @@ ARouter.getInstance().build("/test/1")
 
 5. 添加混淆规则(如果使用了Proguard)
 ``` 
--keep public class com.alibaba.android.arouter.routes.**{*;}
--keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
+-keep public class com.lexinfintech.android.arouter.routes.**{*;}
+-keep class * implements com.lexinfintech.android.arouter.facade.template.ISyringe{*;}
 
 # 如果使用了 byType 的方式获取 Service，需添加下面规则，保护接口
--keep interface * implements com.alibaba.android.arouter.facade.template.IProvider
+-keep interface * implements com.lexinfintech.android.arouter.facade.template.IProvider
 
 # 如果使用了 单类注入，即不定义接口实现 IProvider，需添加下面规则，保护实现
--keep class * implements com.alibaba.android.arouter.facade.template.IProvider
+-keep class * implements com.lexinfintech.android.arouter.facade.template.IProvider
 ```
 
 6. 使用 Gradle 插件实现路由表的自动加载
 ```gradle
-apply plugin: 'com.alibaba.arouter'
+apply plugin: 'com.lexinfintech.arouter'
 
 buildscript {
     repositories {
@@ -436,7 +436,7 @@ public class PathReplaceServiceImpl implements PathReplaceService {
 5. 生成路由文档
 ``` gradle
 // 更新 build.gradle, 添加参数 AROUTER_GENERATE_DOC = enable
-// 生成的文档路径 : build/generated/source/apt/(debug or release)/com/alibaba/android/arouter/docs/arouter-map-of-${moduleName}.json
+// 生成的文档路径 : build/generated/source/apt/(debug or release)/com/lexinfintech/android/arouter/docs/arouter-map-of-${moduleName}.json
 android {
     defaultConfig {
         ...

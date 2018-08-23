@@ -97,24 +97,24 @@ ARouter.getInstance().build("/test/1")
 
 5. Add confusing rules (If Proguard is turn on)
 ``` 
--keep public class com.alibaba.android.arouter.routes.**{*;}
--keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
+-keep public class com.lexinfintech.android.arouter.routes.**{*;}
+-keep class * implements com.lexinfintech.android.arouter.facade.template.ISyringe{*;}
 
 # If you use the byType method to obtain Service, add the following rules to protect the interface:
--keep interface * implements com.alibaba.android.arouter.facade.template.IProvider
+-keep interface * implements com.lexinfintech.android.arouter.facade.template.IProvider
 
 # If single-type injection is used, that is, no interface is defined to implement IProvider, the following rules need to be added to protect the implementation
--keep class * implements com.alibaba.android.arouter.facade.template.IProvider
+-keep class * implements com.lexinfintech.android.arouter.facade.template.IProvider
 
 # If @Autowired is used for injection in non-Activity classes, add the following rules to prevent injection failures
 -keepnames class * {
-    @com.alibaba.android.arouter.facade.annotation.Autowired <fields>;
+    @com.lexinfintech.android.arouter.facade.annotation.Autowired <fields>;
 }
 ```
 
 6. Using the custom gradle plugin to autoload the routing table
 ```gradle
-apply plugin: 'com.alibaba.arouter'
+apply plugin: 'com.lexinfintech.arouter'
 
 buildscript {
     repositories {
@@ -429,7 +429,7 @@ public class PathReplaceServiceImpl implements PathReplaceService {
 5. Generate router doc
 ``` gradle
 // Edit build.gradle, add option 'AROUTER_GENERATE_DOC = enable'
-// Doc file : build/generated/source/apt/(debug or release)/com/alibaba/android/arouter/docs/arouter-map-of-${moduleName}.json
+// Doc file : build/generated/source/apt/(debug or release)/com/lexinfintech/android/arouter/docs/arouter-map-of-${moduleName}.json
 android {
     defaultConfig {
         ...
